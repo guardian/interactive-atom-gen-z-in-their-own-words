@@ -1,5 +1,102 @@
 .europe-gen-z {
   &__furniture {
-    display: none;
+    &__four-lines {
+      .line {
+        display: block;
+        margin-bottom: 3px;
+        height: 1px;
+        background-color: #dcdcdc;
+        margin-left: -10px;
+        margin-right: -10px;
+        @include mq(mobileLandscape) {
+          margin-left: -20px;
+          margin-right: -20px;
+        }
+      }
+    }
+    &__byline {
+      font-size: 17px;
+      line-height: 20px;
+      font-family: $font-headline;
+      font-style: italic;
+      font-weight: 400;
+      color: #c70000;
+      a {
+        font-weight: 700;
+        font-style: normal;
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    &__date {
+      margin-top: 12px;
+      margin-bottom: 2px;
+      font-size: 12px;
+      line-height: 20px;
+      font-family: $font-sans;
+      color: #767676;
+    }
+    &__share {
+      &__one-line {
+        background-color: #dcdcdc;
+        width: auto;
+        height: 1px;
+        margin-left: -10px;
+        margin-right: -10px;
+        position: relative;
+        top: 1px;
+        z-index: 10;
+        @include mq(mobileLandscape) {
+          margin-left: -20px;
+          margin-right: -20px;
+        }
+      }
+      .social-icon {
+        background-color: #fff;
+        border: 1px solid #dcdcdc;
+        width: 36px;
+        height: 36px;
+        &:hover {
+          background-color: #121212;
+          svg path {
+            fill: #fff;
+          }
+        }
+        svg path {
+          fill: #121212;
+        }
+        svg {
+          transform: scale(1.15);
+          &.new-email {
+            transform: scale(0.72) translate(1px, 0);
+          }
+        }
+      }
+    }
+    &__standfirst {
+      &__one-line {
+        background-color: #dcdcdc;
+        width: auto;
+        height: 1px;
+        margin-left: -10px;
+        margin-right: -10px;
+        position: relative;
+        top: 1px;
+        z-index: 10;
+        @include mq(mobileLandscape) {
+          margin-left: -20px;
+          margin-right: -20px;
+        }
+      }
+      p {
+        font-family: $font-headline;
+        font-size: 20px;
+        line-height: 24px;
+        margin: 6px 0 12px;
+      }
+    }
   }
 }
