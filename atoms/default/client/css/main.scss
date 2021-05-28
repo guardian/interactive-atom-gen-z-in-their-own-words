@@ -3,7 +3,13 @@
 @import "palette";
 // @import "enhancer";
 
-.interactive-atom {
-    margin: 0;
-    padding: 0;
-}
+@import "vars";
+@import "fix-dotcom";
+@import "base";
+
+@import "header";
+@import "furniture";
+@import "filters";
+@import "content";
+@import "footer";
+
