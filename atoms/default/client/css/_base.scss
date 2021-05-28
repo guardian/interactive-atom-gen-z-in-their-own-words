@@ -1,0 +1,53 @@
+
+body > .element-atom,
+.interactive-atom {
+  margin: 0;
+  padding: 0;
+}
+
+.europe-gen-z {
+  &__document {
+    margin: 0 auto;
+    background-color: #FBF6EF;
+    &:before,
+    &:after {
+      content: '';
+      display: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background-color: #dcdcdc;
+    }
+    &:before {
+      left: 0;
+    }
+    &:after {
+      right: 0;
+    }
+
+    @include mq(tablet) {
+      width: 740px;
+      position: relative;
+      &:before,
+      &:after {
+        display: block;
+      }
+    }
+    @include mq(desktop) {
+      width: 980px;
+    }
+    @include mq(leftCol) {
+      width: 1140px;
+    }
+    @include mq(wide) {
+      width: 1300px;
+    }
+  }
+  &__wrapper {
+    padding: 0 10px;
+    @include mq(mobileLandscape) {
+      padding: 0 20px;
+    }
+  }
+}

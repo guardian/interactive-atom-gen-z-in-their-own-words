@@ -1,0 +1,46 @@
+.europe-gen-z {
+  &__header {
+    &__headline {
+      padding: 20px 0;
+      .label__wrapper {
+        background-color: #ffe500;
+        display: inline-block;
+        padding: 0;
+        a {
+          padding: 4px 6px;
+          line-height: 24px;
+          display: inline-block;
+          margin: 0;
+          font-size: 20px;
+          font-weight: 700;
+          color: #121212;
+          text-decoration: none;
+          font-family: $font-headline;
+          &:hover {
+            text-decoration: underline;
+          }
+          @include mq(tablet) {
+            font-size: 24px;
+            line-height: 27px;
+            padding-bottom: 5px;
+          }
+        }
+      }
+      h1 {
+        font-size: 56px;
+        line-height: 0.82em;
+        font-family: $font-headline;
+        font-style: italic;
+        font-weight: 200;
+        margin-top: 10px;
+        width: 5em;
+        @include mq(tablet) {
+          font-size: 86px;
+        }
+        @include mq(desktop) {
+          font-size: 114px;
+        }
+    }
+    }
+  }
+}

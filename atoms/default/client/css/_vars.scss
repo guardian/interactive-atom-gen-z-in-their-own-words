@@ -1,0 +1,15 @@
+$mq-breakpoints: (
+    mobile:          320px,
+    mobileMedium:    375px,
+    mobileLandscape: 480px,
+    phablet:         660px,
+    tablet:          740px,
+    desktop:         980px,
+    leftCol:         1140px,
+    wide:            1300px
+);
+
+$font-titlepiece: 'Guardian Titlepiece','Guardian Headline Full','Guardian Headline','Guardian Egyptian Web',Georgia,serif;
+$font-headline: 'Guardian Headline Full', 'Guardian Headline', 'Guardian Egyptian Web', Georgia, serif;
+$font-text: 'Guardian Text Egyptian Web',Georgia,serif;
+$font-sans: 'Guardian Text Sans Web', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
