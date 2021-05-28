@@ -1,5 +1,62 @@
 .europe-gen-z {
-  &__filter {
-    display: none;
+  &__filters {
+    &__four-lines {
+      .line {
+        display: block;
+        margin-bottom: 3px;
+        height: 1px;
+        background-color: #dcdcdc;
+        margin-left: -10px;
+        margin-right: -10px;
+        @include mq(mobileLandscape) {
+          margin-left: -20px;
+          margin-right: -20px;
+        }
+      }
+    }
+
+    &__inner {
+      font-family: $font-sans;
+      font-size: 15px;
+      line-height: 24px;
+      display: flex;
+      flex-direction: column;
+      @include mq(tablet) {
+        font-size: 17px;
+      }
+      @include mq(leftCol) {
+        flex-direction: row;
+        padding: 4px 0 12px;
+      }
+    }
+    &__label {
+      margin-bottom: 8px;
+      @include mq(leftCol) {
+        padding: 4px 20px;
+        width: 140px;
+        text-align: right;
+      }
+      @include mq(wide) {
+        width: 220px;
+      }
+    }
+    &__options {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      &__option {
+        cursor: pointer;
+        display: flex;
+        background-color: #ffe500;
+        padding: 1px 6px 3px;
+        margin: 0 8px 8px 0;
+        &:hover {
+          background-color: #F3C100;
+        }
+          @include mq(tablet) {
+          padding: 4px 8px;
+        }
+      }
+    }
   }
 }
