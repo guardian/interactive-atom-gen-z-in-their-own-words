@@ -96,6 +96,15 @@
         font-size: 20px;
         line-height: 24px;
         margin: 6px 0 12px;
+        a {
+          color: inherit;
+          border-bottom: 1px solid #767676;
+          &:hover {
+            color: #c70000;
+            text-decoration: none;
+            border-bottom-color: #c70000;
+          }
+        }
       }
     }
   }
