@@ -5,6 +5,12 @@ body > .element-atom,
   padding: 0;
 }
 
+.text {
+  font-family: $font-text;
+  font-size: 17px;
+  line-height: 24px;
+}
+
 .europe-gen-z {
   &__document {
     margin: 0 auto;

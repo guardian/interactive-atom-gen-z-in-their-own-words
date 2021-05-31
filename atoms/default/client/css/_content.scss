@@ -1,0 +1,62 @@
+.europe-gen-z__content {
+  .entry {
+    position: relative;
+    padding-top: 4px;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -10px;
+      right: -10px;
+      height: 1px;
+      background-color: #dcdcdc;
+      @include mq(mobileLandscape) {
+        left: -20px;
+        right: -20px;
+      }
+    }
+    &__name-age {
+      font-family: $font-headline;
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 200;
+      font-style: italic;
+      @include mq(tablet) {
+        font-size: 36px;
+      }
+    }
+    &__occupation {
+      font-weight: bold;
+    }
+    &__quote {
+
+    }
+    &__intro {
+
+    }
+    &__more {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: #C70000;
+      padding: 4px 0 12px;
+      margin-left: -1px;
+      &__icon {
+        width: 32px;
+        height: 32px;
+        background-color: currentColor;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &__read-more {
+        font-family: $font-sans;
+        font-size: 17px;
+        margin-left: 0.25em;
+        padding-bottom: 4px;
+      }
+    }
+  }
+}
