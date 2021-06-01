@@ -21,23 +21,27 @@
       line-height: 24px;
       display: flex;
       flex-direction: column;
+      padding-bottom: 32px;
       @include mq(tablet) {
         font-size: 17px;
       }
-      @include mq(leftCol) {
+      @include mq(desktop) {
+        padding: 4px 0 40px;
         flex-direction: row;
-        padding: 4px 0 12px;
       }
     }
     &__label {
       margin-bottom: 8px;
-      @include mq(leftCol) {
-        padding: 4px 20px;
+      @include mq(desktop) {
+        padding: 4px 20px 4px 0;
         width: 140px;
         text-align: right;
       }
-      @include mq(wide) {
+      @include mq(leftCol) {
         width: 220px;
+      }
+      @include mq(wide) {
+        width: 300px;
       }
     }
     &__options {

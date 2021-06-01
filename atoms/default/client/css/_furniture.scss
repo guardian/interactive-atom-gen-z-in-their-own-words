@@ -38,11 +38,23 @@
       line-height: 20px;
       font-family: $font-sans;
       color: #767676;
+      @include mq(desktop) {
+        width: 130px;
+      }
     }
     &__share {
       .ios &,
       .android & {
         display: none;
+      }
+      @include mq(desktop) {
+        width: 130px;
+      }
+      @include mq(leftCol) {
+        width: 210px;
+      }
+      @include mq(wide) {
+        width: 290px;
       }
       &__one-line {
         background-color: #dcdcdc;
@@ -81,6 +93,21 @@
       }
     }
     &__standfirst {
+      @include mq(desktop) {
+        width: 480px;
+        margin-left: 160px;
+        padding-bottom: 12px;
+        position: relative;
+        margin-top: -76px;
+      }
+      @include mq(leftCol) {
+        margin-left: 240px;
+        width: 520px;
+      }
+      @include mq(wide) {
+        margin-left: 320px;
+      }
+
       &__one-line {
         background-color: #dcdcdc;
         width: auto;
@@ -93,6 +120,14 @@
         @include mq(mobileLandscape) {
           margin-left: -20px;
           margin-right: -20px;
+        }
+        @include mq(desktop) {
+          position: absolute;
+          top: -8px;
+          left: 10px;
+          bottom: 0;
+          width: 1px;
+          height: auto;
         }
       }
       p {
