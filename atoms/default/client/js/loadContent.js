@@ -70,7 +70,10 @@ function makeEntry(data, ePrototype, cRoot) {
     e.querySelector('.entry__photo').classList.remove('empty');
   }
 
-
+  // Big on desktop
+  if (data['Boosted'] === 'TRUE') {
+    e.classList.add('boosted')
+  }
 
   // Categories
   // to-do

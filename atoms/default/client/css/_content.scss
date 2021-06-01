@@ -31,6 +31,13 @@
         width: 460px;
         min-height: 258px;
       }
+      @include mq(leftCol) {
+        width: 540px;
+        margin-left: 240px;
+      }
+      @include mq(wide) {
+        margin-left: 320px;
+      }
     }
 
     &__photo {
@@ -50,6 +57,12 @@
       }
       @include mq(desktop) {
         width: 140px;
+      }
+      @include mq(leftCol) {
+        margin-left: 80px;
+      }
+      @include mq(wide) {
+        margin-left: 160px;
       }
       img {
         display: block;
@@ -85,6 +98,7 @@
         right: 0;
         top: 0;
         width: 300px;
+        color: #c70000;
         &:after {
           content: '';
           background-color: #dcdcdc;
@@ -95,6 +109,9 @@
           bottom: 2px;
           display: block;
         }
+      }
+      @include mq(wide) {
+        right: 80px;
       }
       &:before {
         content: '“';
@@ -156,6 +173,20 @@
         font-size: 17px;
         margin-left: 0.25em;
         padding-bottom: 2px;
+      }
+    }
+    &.boosted {
+      @include mq(wide) {
+        .entry {
+          &__inner {
+            min-height: 350px;
+          }
+          &__photo {
+            height: 350px;
+            width: 220px;
+            margin-left: 80px;
+          }
+        }
       }
     }
     &.expanded {
