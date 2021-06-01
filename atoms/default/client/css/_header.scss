@@ -2,6 +2,18 @@
   &__header {
     &__headline {
       padding: 20px 0;
+      @include mq(tablet) {
+        margin-left: 120px;
+      }
+      @include mq(desktop) {
+        margin-left: 160px;
+      }
+      @include mq(leftCol) {
+        margin-left: 240px;
+      }
+      @include mq(wide) {
+        margin-left: 320px;
+      }
       .label__wrapper {
         background-color: #ffe500;
         display: inline-block;
