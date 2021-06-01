@@ -1,5 +1,9 @@
 .europe-gen-z__content {
   .entry {
+    &.prototype {
+      display: none;
+      opacity: 0.5;
+    }
     position: relative;
     padding-top: 4px;
     &:before {
@@ -18,8 +22,8 @@
     }
     &__name-age {
       font-family: $font-headline;
-      font-size: 24px;
-      line-height: 1;
+      font-size: 28px;
+      line-height: 1.15;
       font-weight: 200;
       font-style: italic;
       @include mq(tablet) {
