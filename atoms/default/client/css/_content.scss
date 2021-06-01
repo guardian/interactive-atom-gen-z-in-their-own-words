@@ -78,6 +78,17 @@
       font-style: italic;
       @include mq(tablet) {
         font-size: 36px;
+        position: relative;
+        &:before {
+          content: '';
+          display: block;
+          width: 1px;
+          position: absolute;
+          left: -10px;
+          top: -4px;
+          height: 41px;
+          background-color: #dcdcdc;
+        }
       }
     }
     &__occupation {
