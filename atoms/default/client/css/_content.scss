@@ -165,6 +165,9 @@
     &__more {
       display: flex;
       flex-direction: column;
+      .less {
+        display: none;
+      }
       &__continuation {
         display: none;
         &:before {
@@ -224,6 +227,12 @@
       }
     }
     &.expanded {
+      .less {
+        display: flex;
+      }
+      .more {
+        display: none;
+      }
       .entry__more {
         flex-direction: column-reverse;
         padding-top: 12px;
