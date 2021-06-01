@@ -42,6 +42,7 @@ function makeEntry(data, ePrototype, cRoot) {
   // Quote
   if (data['Quote']) {
     e.querySelector('.entry__quote').innerText = data['Quote'];
+    e.querySelector('.entry__quote').classList.remove('empty');
   }
 
   // Intro
@@ -51,7 +52,6 @@ function makeEntry(data, ePrototype, cRoot) {
 
   // Continuation
   if (data['Continuation']) {
-    let c = `<p></p>`;
     let cText = data['Continuation'];
     cText = cText.trim();
     cText = cText.split('\n\n').join('\n');
@@ -60,7 +60,15 @@ function makeEntry(data, ePrototype, cRoot) {
     e.querySelector('.entry__more__continuation').innerHTML = cText;
   }
 
-
+  if (data['Photo']) {
+    let iEl = document.createElement('img');
+    const iUrl = data['Photo'].trim();
+    const iUrlHi = iUrl.split('.jpg').join('@2x.jpg');
+    iEl.setAttribute('src', iUrl);
+    iEl.setAttribute('srcset', `${iUrl} 220w, ${iUrlHi} 440w`);
+    e.querySelector('.entry__photo').appendChild(iEl);
+    e.querySelector('.entry__photo').classList.remove('empty');
+  }
 
 
 
@@ -76,9 +84,7 @@ function makeEntry(data, ePrototype, cRoot) {
 function allowExpand(e) {
   let btn = e.querySelector('.entry__more__control');
   btn.addEventListener('click', () => {
-    console.log('cli');
     e.classList.toggle('expanded');
-
   })
 }
 
@@ -99,3 +105,67 @@ function loadJSON(path, success, error) {
   xhr.send();
 }
 
+
+
+const tmpPhotos = ['https://uploads.guim.co.uk/2021/06/01/Abigail-Taylor.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Alba-Fernandez.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Alex.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Alexander-Young.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Alexis-Kay.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Alfie-Robinson.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Ali-Mohammad-Azimi.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Alina-Dieth.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Andrea-Carta.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Andrea-Coghe.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Anete-Strupule.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Angela-Cucovei.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Anthony-Pansard.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Antje-Fischbach.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Astrid-Robertson.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Ava-Ayala-Rosenbaum.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Ben-Morris.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Cameron-Dorling.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Chloe-Lassel.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Cinzia-Sargheddu.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Clara-Gonzalez-Espelt.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Daniel-Pye.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Darragh-Nolan.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Debbie-Curtius.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Elina-Dibtseva.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Eloise-Queally.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Emil-Biese.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Emilia-Mason.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Giorgos-Stamatis.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Giulia.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Gwendolyn-Amey.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Heather-Storgaard.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Ingrid-Oja.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Isabell-Koch.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Jamina.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Josep-Montserrat.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Katie-Quirk.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Kunsh-Puranit.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Lev-Pavlovski.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Lukas-Chalupa.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Luqman-Wadood.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Marie-Antonietta.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Mariska-Faasen.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Mark-Lehman.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Mathias-Montesano.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Merel-Hol.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Mounir.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Nabrissa-Badu.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Nick-Davids.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Nicoleta-Ghita.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Olivia-Grace-Smith.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Osker.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Patrizia-Buosi.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Ruaidhri-O-Conaill.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Sabini-Bebcakova.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Saga-Jonsson.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Sam-OSullivan.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Sara-Besme-Shabib.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Shashank-Palety.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Simone.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Sunaina-Mathapati.jpg',
+  'https://uploads.guim.co.uk/2021/06/01/Vova.jpg']
