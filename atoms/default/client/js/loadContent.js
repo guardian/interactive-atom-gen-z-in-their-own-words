@@ -75,8 +75,29 @@ function makeEntry(data, ePrototype, cRoot) {
     e.classList.add('boosted')
   }
 
+  // Optimistic about the future
+  if (data['Optimistic'] === 'TRUE') {
+    e.querySelector('.entry__optimistic .response').innerText = 'Yes!';
+  } else if (data['Optimistic'] === 'FALSE') {
+    e.querySelector('.entry__optimistic .response').innerText = 'No';
+  }
+
   // Categories
-  // to-do
+  if (data['Psychological'] === 'TRUE') {
+    e.classList.add('psychological');
+  }
+  if (data['Education-jobs'] === 'TRUE') {
+    e.classList.add('education');
+  }
+  if (data['Relationships'] === 'TRUE') {
+    e.classList.add('relationships');
+  }
+  if (data['Big-issues'] === 'TRUE') {
+    e.classList.add('issues');
+  }
+  if (data['GenZ-solutions'] === 'TRUE') {
+    e.classList.add('solutions');
+  }
 
   cRoot.appendChild(e);
 

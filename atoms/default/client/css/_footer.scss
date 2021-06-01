@@ -1,0 +1,154 @@
+.europe-gen-z {
+  &__footer {
+    padding-bottom: 24px;
+    @include mq(tablet) {
+      padding-bottom: 40px;
+    }
+    &__four-lines {
+      .line {
+        display: block;
+        margin-bottom: 3px;
+        height: 1px;
+        background-color: #dcdcdc;
+        margin-left: -10px;
+        margin-right: -10px;
+        @include mq(mobileLandscape) {
+          margin-left: -20px;
+          margin-right: -20px;
+        }
+      }
+    }
+    &__byline {
+      font-size: 17px;
+      line-height: 20px;
+      font-family: $font-headline;
+      font-style: italic;
+      font-weight: 400;
+      color: #c70000;
+      margin-bottom: 12px;
+      a {
+        font-weight: 700;
+        font-style: normal;
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    &__date {
+      margin-bottom: 2px;
+      font-size: 12px;
+      line-height: 20px;
+      font-family: $font-sans;
+      color: #767676;
+      @include mq(desktop) {
+        width: 130px;
+      }
+    }
+    &__share {
+      .ios &,
+      .android & {
+        display: none;
+      }
+      @include mq(leftCol) {
+        width: 210px;
+      }
+      @include mq(wide) {
+        width: 290px;
+      }
+      &__one-line {
+        background-color: #dcdcdc;
+        width: auto;
+        height: 1px;
+        margin-left: -10px;
+        margin-right: -10px;
+        position: relative;
+        top: 1px;
+        z-index: 10;
+        @include mq(mobileLandscape) {
+          margin-left: -20px;
+          margin-right: -20px;
+        }
+      }
+      .social-icon {
+        background-color: #fff;
+        border: 1px solid #dcdcdc;
+        width: 36px;
+        height: 36px;
+        &:hover {
+          background-color: #121212;
+          svg path {
+            fill: #fff;
+          }
+        }
+        svg path {
+          fill: #121212;
+        }
+        svg {
+          transform: scale(1.15);
+          &.new-email {
+            transform: scale(0.72) translate(1px, 0);
+          }
+        }
+      }
+    }
+    &__one-line {
+      background-color: #dcdcdc;
+      width: auto;
+      height: 1px;
+      margin-left: -10px;
+      margin-right: -10px;
+      margin-bottom: 4px;
+      position: relative;
+      top: 1px;
+      z-index: 10;
+      @include mq(mobileLandscape) {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      @include mq(tablet) {
+        margin-bottom: 6px;
+      }
+      @include mq(leftCol) {
+        top: 0;
+      }
+    }
+
+    &__meta {
+      @include mq(leftCol) {
+        width: 210px;
+        position: absolute;
+      }
+      @include mq(wide) {
+        width: 290px;
+      }
+    }
+    &__main {
+      @include mq(leftCol) {
+        margin-left: 240px;
+        margin-top: -1px;
+        position: relative;
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: -10px;
+          bottom: -48px;
+          width: 1px;
+          background-color: #dcdcdc;
+        }
+      }
+      @include mq(wide) {
+        margin-left: 320px;
+      }
+      p {
+        max-width: 620px;
+        @include mq(desktop) {
+          max-width: 540px;
+        }
+      }
+    }
+  }
+}

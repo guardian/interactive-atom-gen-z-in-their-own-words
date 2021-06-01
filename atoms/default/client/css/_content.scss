@@ -4,6 +4,16 @@
       display: none;
       opacity: 0.5;
     }
+
+    [data-topic='psychological'] &:not(.psychological),
+    [data-topic='education'] &:not(.education),
+    [data-topic='relationships'] &:not(.relationships),
+    [data-topic='issues'] &:not(.issues),
+    [data-topic='solutions'] &:not(.solutions) {
+      display: none;
+    }
+
+
     position: relative;
     padding-top: 4px;
     padding-bottom: 24px;
@@ -93,6 +103,13 @@
     }
     &__occupation {
       font-weight: bold;
+    }
+    &__optimistic {
+      font-style: italic;
+      .response {
+        font-style: normal;
+        font-weight: bold;
+      }
     }
     &__quote {
       &.empty {
@@ -186,8 +203,9 @@
         padding-bottom: 2px;
       }
     }
-    &.boosted {
-      @include mq(wide) {
+    &.boosted,
+    &.expanded {
+      @include mq(leftCol) {
         .entry {
           &__inner {
             min-height: 350px;
@@ -195,8 +213,13 @@
           &__photo {
             height: 350px;
             width: 220px;
-            margin-left: 80px;
+            margin-left: 0;
           }
+        }
+      }
+      @include mq(wide) {
+        .entry__photo {
+          margin-left: 80px;
         }
       }
     }

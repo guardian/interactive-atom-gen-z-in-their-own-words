@@ -36,6 +36,7 @@
         padding: 4px 20px 4px 0;
         width: 140px;
         text-align: right;
+        margin-bottom: 0;
       }
       @include mq(leftCol) {
         width: 220px;
@@ -48,17 +49,48 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      @include mq(tablet) {
+        flex-wrap: nowrap;
+      }
       &__option {
         cursor: pointer;
         display: flex;
-        background-color: #ffe500;
-        padding: 1px 6px 3px;
+        padding: 0 5px 2px;
         margin: 0 8px 8px 0;
-        &:hover {
-          background-color: #F3C100;
+        transition: all 0.5s ease-out;
+        @include mq(tablet) {
+          padding: 3px 7px;
+          white-space: nowrap;
         }
-          @include mq(tablet) {
-          padding: 4px 8px;
+        @include mq(desktop) {
+          margin: 0 8px 0 0;
+        }
+
+        background-color: #eaeaea;
+        border-color: #eaeaea;
+
+        [data-topic='all'] & {
+          background-color: #ffe500;
+          border-color: #ffe500;
+        }
+
+        [data-topic='psychological'] &[data-toggles='psychological'],
+        [data-topic='education'] &[data-toggles='education'],
+        [data-topic='relationships'] &[data-toggles='relationships'],
+        [data-topic='issues'] &[data-toggles='issues'],
+        [data-topic='solutions'] &[data-toggles='solutions'] {
+          // Selected
+          background-color: #ffe500;
+          border-color: #ffe500;
+        }
+      }
+      &:hover .europe-gen-z__filters__options__option {
+        background-color: #eaeaea;
+        border-color: #eaeaea;
+        &:hover {
+          background-color: #ffe500;
+          border-color: #ffe500;
+
         }
       }
     }
