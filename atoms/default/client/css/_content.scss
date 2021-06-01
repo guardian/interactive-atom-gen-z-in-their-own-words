@@ -41,11 +41,19 @@
     }
     &__more {
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      color: #C70000;
-      padding: 4px 0 12px;
-      margin-left: -1px;
+      flex-direction: column;
+      &__continuation {
+        display: none;
+      }
+      &__control {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #C70000;
+        padding: 4px 0 12px;
+        margin-left: -1px;
+      }
       &__icon {
         width: 32px;
         height: 32px;
@@ -59,8 +67,22 @@
         font-family: $font-sans;
         font-size: 17px;
         margin-left: 0.25em;
-        padding-bottom: 4px;
+        padding-bottom: 2px;
       }
     }
+    &.expanded {
+      .entry__more {
+        flex-direction: column-reverse;
+        padding-top: 12px;
+        &__continuation {
+          display: block;
+        }
+        &__control {
+
+        }
+
+      }
+    }
+
   }
 }

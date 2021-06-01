@@ -49,8 +49,16 @@ function makeEntry(data, ePrototype, cRoot) {
     e.querySelector('.entry__intro').innerText = data['Intro'];
   }
 
-
   // Continuation
+  if (data['Continuation']) {
+    let c = `<p></p>`;
+    let cText = data['Continuation'];
+    cText = cText.trim();
+    cText = cText.split('\n\n').join('\n');
+    cText = cText.split('\n').join('</p><p>');
+    cText = `<p>${cText}</p>`;
+    e.querySelector('.entry__more__continuation').innerHTML = cText;
+  }
 
 
 
@@ -60,6 +68,18 @@ function makeEntry(data, ePrototype, cRoot) {
   // to-do
 
   cRoot.appendChild(e);
+
+  allowExpand(e);
+}
+
+
+function allowExpand(e) {
+  let btn = e.querySelector('.entry__more__control');
+  btn.addEventListener('click', () => {
+    console.log('cli');
+    e.classList.toggle('expanded');
+
+  })
 }
 
 function loadJSON(path, success, error) {
