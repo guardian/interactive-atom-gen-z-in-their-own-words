@@ -46,13 +46,16 @@
         }
       }
       h1 {
-        font-size: 56px;
+        font-size: 48px;
         line-height: 0.82em;
         font-family: $font-headline;
         font-style: italic;
         font-weight: 200;
-        margin-top: 10px;
+        margin-top: 17px;
         width: 5em;
+        @include mq(360px) {
+          font-size: 56px;
+        }
         @include mq(tablet) {
           font-size: 89px;
           margin-top: 10px;

@@ -21,13 +21,19 @@
       line-height: 24px;
       display: flex;
       flex-direction: column;
-      padding-bottom: 32px;
+      padding-bottom: 200vh;
+      .gen-z__loaded & {
+        padding-bottom: 32px;
+      }
       @include mq(tablet) {
         font-size: 17px;
       }
       @include mq(desktop) {
-        padding: 4px 0 40px;
         flex-direction: row;
+        padding-top: 4px;
+        .gen-z__loaded & {
+          padding-bottom: 40px;
+        }
       }
     }
     &__label {

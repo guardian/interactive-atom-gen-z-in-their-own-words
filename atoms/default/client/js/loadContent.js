@@ -16,6 +16,8 @@ function updateContent(jsonLink, tabName = 'Sheet1') {
       makeEntry(d, entryPrototype, contentRoot);
     });
 
+    document.body.classList.add('gen-z__loaded');
+
   });
 
 }
