@@ -1,5 +1,6 @@
 .europe-gen-z {
   &__furniture {
+    position: relative;
     &__four-lines {
       .line {
         display: block;
@@ -91,6 +92,38 @@
           }
         }
       }
+    }
+    &__g200 {
+      position: absolute;
+      top: 13px;
+      height: 80px;
+      z-index: 10;
+      padding-left: 0px;
+      padding-top: 4px;
+      right: -10px;
+      padding-right: 10px;
+      background-color: #FBF6EF;
+      border-left: 1px solid #dcdcdc;
+      @include mq(mobileLandscape) {
+        padding-right: 20px;
+        right: -20px;
+      }
+      @include mq(tablet) {
+        right: -19px;
+      }
+      @include mq(desktop) {
+        border: 0;
+        top: 16px;
+      }
+      a {
+        transform: scale(0.9);
+        transform-origin: top right;
+        display: block;
+        @include mq(desktop) {
+          transform: none;
+        }
+      }
+
     }
     &__standfirst {
       @include mq(desktop) {
