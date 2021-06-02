@@ -1,4 +1,8 @@
 .europe-gen-z__content {
+  padding-bottom: 12px;
+  @include mq(tablet) {
+    padding-bottom: 48px;
+  }
   .entry {
     &.prototype {
       display: none;
@@ -170,6 +174,9 @@
     &__more {
       display: flex;
       flex-direction: column;
+      .more {
+        padding: 0;
+      }
       .less {
         display: none;
       }
@@ -186,14 +193,14 @@
       }
       &__control {
         width: 140px;
-        height: 32px;
+        height: 32px !important;
         cursor: pointer;
         display: flex;
         flex-direction: row;
         align-items: center;
         color: #C70000;
-        margin-top: 4px;
-        padding: 4px 0 12px;
+        margin-top: 8px;
+        // padding: 4px 0 12px;
         margin-left: -1px;
         &:hover {
           .entry__more__icon {
@@ -202,19 +209,32 @@
         }
       }
       &__icon {
-        width: 32px;
-        height: 32px;
+        width: 32px !important;
+        height: 32px !important;
         background-color: currentColor;
         border-radius: 100%;
-        display: flex;
+        display: inline-block;
         align-items: center;
         justify-content: center;
         transition: transform 120ms ease-in-out;
+        position: relative;
+        svg {
+          position: absolute;
+          display: block;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .ios &.more,
+        .android &.more {
+          position: relative;
+          top: 2px;
+        }
       }
       &__read-more {
         font-family: $font-sans;
         font-size: 17px;
-        margin-left: 0.25em;
+        margin-left: 0.3em;
         padding-bottom: 2px;
       }
     }
@@ -240,10 +260,11 @@
     }
     &.expanded {
       .less {
-        display: flex;
+        display: inline-block;
       }
       .more {
         display: none;
+        padding: 0;
       }
       .entry__more {
         flex-direction: column-reverse;

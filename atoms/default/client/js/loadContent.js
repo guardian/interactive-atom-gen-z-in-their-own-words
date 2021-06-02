@@ -66,6 +66,7 @@ function makeEntry(data, ePrototype, cRoot) {
     let iEl = document.createElement('img');
     const iUrl = data['Photo'].trim();
     const iUrlHi = iUrl.split('.jpg').join('@2x.jpg');
+    iEl.setAttribute('loading', 'lazy');
     iEl.setAttribute('src', iUrl);
     iEl.setAttribute('srcset', `${iUrl} 220w, ${iUrlHi} 440w`);
     e.querySelector('.entry__photo').appendChild(iEl);
