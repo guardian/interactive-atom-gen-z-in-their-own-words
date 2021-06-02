@@ -1,9 +1,11 @@
 .europe-gen-z {
   &__footer {
-    display: none;
     padding-bottom: 24px;
     @include mq(tablet) {
       padding-bottom: 40px;
+    }
+    a {
+      color: #c70000;
     }
     &__four-lines {
       .line {
