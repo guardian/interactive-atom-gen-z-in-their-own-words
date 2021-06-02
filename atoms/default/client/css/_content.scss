@@ -84,7 +84,7 @@
       font-family: $font-headline;
       font-size: 28px;
       line-height: 1.15;
-      font-weight: 200;
+      font-weight: 300;
       font-style: italic;
       @include mq(tablet) {
         font-size: 36px;
@@ -103,9 +103,14 @@
     }
     &__occupation {
       font-weight: bold;
+      margin-bottom: 12px;
     }
     &__optimistic {
+      display: none;
       font-style: italic;
+      p {
+        margin: 0;
+      }
       .response {
         font-style: normal;
         font-weight: bold;
@@ -238,6 +243,10 @@
         padding-top: 12px;
         &__continuation {
           display: block;
+        }
+        .entry__optimistic {
+          display: block;
+          margin-bottom: 12px;
         }
         &__control {
 

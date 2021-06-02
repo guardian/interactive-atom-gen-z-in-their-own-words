@@ -77,7 +77,7 @@ function makeEntry(data, ePrototype, cRoot) {
 
   // Optimistic about the future
   if (data['Optimistic'] === 'TRUE') {
-    e.querySelector('.entry__optimistic .response').innerText = 'Yes!';
+    e.querySelector('.entry__optimistic .response').innerText = 'Yes';
   } else if (data['Optimistic'] === 'FALSE') {
     e.querySelector('.entry__optimistic .response').innerText = 'No';
   }
