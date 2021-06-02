@@ -33,6 +33,21 @@
         }
       }
     }
+    .crosslink {
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background-color: currentColor;
+        opacity: 0.3;
+        border-radius: 100%;
+        margin-right: 6px;
+      }
+      a {
+
+      }
+    }
     &__date {
       margin-bottom: 2px;
       font-size: 12px;
