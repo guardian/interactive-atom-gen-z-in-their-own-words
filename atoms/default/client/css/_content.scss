@@ -194,6 +194,11 @@
         margin-top: 4px;
         padding: 4px 0 12px;
         margin-left: -1px;
+        &:hover {
+          .entry__more__icon {
+            transform: scale(1.1);
+          }
+        }
       }
       &__icon {
         width: 32px;
@@ -203,6 +208,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: transform 120ms ease-in-out;
       }
       &__read-more {
         font-family: $font-sans;
