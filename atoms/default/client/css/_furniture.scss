@@ -57,6 +57,10 @@
       @include mq(desktop) {
         width: 130px;
       }
+      .ios &,
+      .android & {
+        min-height: 78px;
+      }
     }
     &__share {
       .ios &,
