@@ -34,18 +34,24 @@
       }
     }
     .crosslink {
+      padding-left: 18px;
+      position: relative;
       &:before {
         content: '';
+        position: absolute;
+        left: 0;
+        top: 0.3em;
         display: inline-block;
         width: 12px;
         height: 12px;
         background-color: currentColor;
-        opacity: 0.3;
+        opacity: 0.25;
         border-radius: 100%;
         margin-right: 6px;
       }
-      a {
-
+      a,
+      a:hover {
+        text-decoration: none;
       }
     }
     &__date {
