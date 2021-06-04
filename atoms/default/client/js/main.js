@@ -16,7 +16,7 @@ setTimeout(() => {
   }
 }, 100)
 
-const scriptAll = ['loadContent', 'filter'];
+const scriptAll = ['loadContent', 'filter', 'audio'];
 scriptAll.forEach((sName) => {
   var el = document.createElement('script');
   el.src = `<%= atomPath %>/${sName}.js`;

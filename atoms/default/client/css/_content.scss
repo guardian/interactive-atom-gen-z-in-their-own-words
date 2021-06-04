@@ -120,16 +120,13 @@
         font-weight: bold;
       }
     }
-    &__quote {
-      &.empty {
-        display: none;
-      }
-      font-family: $font-headline;
-      font-weight: 200;
-      font-style: italic;
+    &__first-person {
       font-size: 20px;
       line-height: 24px;
-      margin: -0.5em 0 12px;
+      @include mq(tablet) {
+        font-size: 24px;
+        line-height: 28px;
+      }
       @include mq(desktop) {
         position: absolute;
         right: 0;
@@ -150,6 +147,16 @@
       @include mq(wide) {
         right: 80px;
       }
+
+    }
+    &__quote {
+      &.empty {
+        display: none;
+      }
+      font-family: $font-headline;
+      font-weight: 200;
+      font-style: italic;
+      margin: -0.5em 0 4px;
       &:before {
         content: '“';
         display: inline;
@@ -164,8 +171,6 @@
       }
       @include mq(tablet) {
         margin-top: -0.1em;
-        font-size: 24px;
-        line-height: 28px;
       }
     }
     &__intro {

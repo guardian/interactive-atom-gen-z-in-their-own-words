@@ -102,6 +102,22 @@ function makeEntry(data, ePrototype, cRoot) {
     e.classList.add('solutions');
   }
 
+  // Audio
+  if (data['AudioFile']) {
+    const aUrl = data['AudioFile'].trim();
+    if (aUrl.indexOf('http') == 0 && aUrl.endsWith('.mp3')) {
+      let aWrapper = e.querySelector('.entry__audio');
+      aWrapper.classList.remove('empty');
+      aWrapper.querySelector('.name').innerText = data['Name'];
+
+      let aEl = document.createElement('div');
+      aEl.classList.add('.entry__audio__audio-el');
+      aEl.innerHTML = `<audio autobuffer preload="metadata"><source src='${aUrl}' type='audio/mpeg'></audio>`;
+      aWrapper.appendChild(aEl);
+    }
+
+  }
+
   cRoot.appendChild(e);
 
   allowExpand(e);
