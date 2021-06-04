@@ -26,7 +26,7 @@ function setupAudio() {
     });
     audioSrcEl.addEventListener('ended', () => {
       nowEl.style.left = `0`
-      aEl.classList.remove('is-playing')
+      aEl.classList.remove('playing')
       updateTimestamp(aEl, audioSrcEl);
     })
   })
