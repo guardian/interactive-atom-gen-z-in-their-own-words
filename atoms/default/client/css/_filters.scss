@@ -27,6 +27,14 @@
       display: flex;
       align-items: center;
       cursor: pointer;
+      @include mq(tablet) {
+        top: -40px;
+        // right: -20px;
+      }
+      @include mq(leftCol) {
+        top: 16px;
+        right: 0;
+      }
       &:hover {
         .europe-gen-z__filters__scroll-to-top__icon {
           background-color: #F3C100;
@@ -36,6 +44,9 @@
         font-family: $font-sans;
         font-size: 15px;
         line-height: 40px;
+        @include mq(tablet) {
+          font-size: 17px;
+        }
       }
       &__icon {
         width: 24px;
