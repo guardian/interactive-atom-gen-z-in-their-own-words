@@ -137,13 +137,29 @@
         right: -19px;
       }
       @include mq(desktop) {
-        border: 0;
-        top: 16px;
+        right: auto;
+        left: -19px;
+        top: 96px;
+        border-left: 0;
+        border-top: 1px solid #dcdcdc;
+        width: 131px;
+        padding-left: 18px;
+        .ios &,
+        .android & {
+          margin-top: -54px;
+        }
+      }
+      @include mq(leftCol) {
+        width: 211px;
+      }
+      @include mq(wide) {
+        width: 291px;
       }
       a {
         transform: scale(0.9);
         transform-origin: top right;
         display: block;
+        max-width: 130px;
         @include mq(desktop) {
           transform: none;
         }
@@ -151,6 +167,11 @@
 
     }
     &__standfirst {
+      @include mq($from:tablet, $until:desktop) {
+        p {
+          width: 540px;
+        }
+      }
       @include mq(desktop) {
         width: 480px;
         margin-left: 160px;
@@ -160,7 +181,7 @@
       }
       @include mq(leftCol) {
         margin-left: 240px;
-        width: 520px;
+        width: 540px;
       }
       @include mq(wide) {
         margin-left: 320px;
