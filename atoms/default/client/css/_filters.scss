@@ -28,12 +28,12 @@
       align-items: center;
       cursor: pointer;
       @include mq(tablet) {
-        top: -40px;
+        top: 14px;
         // right: -20px;
       }
       @include mq(leftCol) {
         top: 16px;
-        right: 0;
+        right: -10px;
       }
       &:hover {
         .europe-gen-z__filters__scroll-to-top__icon {
@@ -169,6 +169,14 @@
           background-color: #ffe500;
           border-color: #ffe500;
 
+        }
+      }
+    }
+    &.bottom {
+      .europe-gen-z__filters__label {
+        width: auto;
+        @include mq(wide) {
+          width: 405px;
         }
       }
     }
