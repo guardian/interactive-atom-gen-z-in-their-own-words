@@ -1,5 +1,5 @@
 let animatableAll = document.querySelectorAll('.animatable-grid-el');
-let delays = [0, 3200, 3600, 5600, 5900, 6200, 7700, 10900];
+let delays = [0, 3200, 5900, 5600, 3600, 6200, 7700, 10900];
 animatableAll.forEach((el, i) => {
 
   const interval = 14000;

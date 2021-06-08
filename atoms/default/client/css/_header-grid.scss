@@ -190,6 +190,10 @@
           height: 100%;
           object-fit: cover;
           object-position: 50% 15%;
+          opacity: 0.6;
+          &[srcset] {
+            opacity: 1;
+          }
         }
 
       }
