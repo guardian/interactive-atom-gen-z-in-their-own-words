@@ -33,6 +33,7 @@
       }
     }
     &__element {
+      position: relative;
       width: auto;
       grid-column-end: span 1;
       grid-row-end: span 1;
@@ -179,6 +180,10 @@
         border-radius: 8px;
         overflow: hidden;
         background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+
         img {
           display: block;
           width: 100%;
@@ -186,9 +191,38 @@
           object-fit: cover;
           object-position: 50% 15%;
         }
+
+        transition: all 0.5s cubic-bezier(.5,0,.25,1.25);
+      }
+
+
+      div:nth-child(1) {
+        z-index: 10;
+        transform: scale(1);
+        transition-delay: 0.55s;
+        opacity: 1;
+      }
+      div:nth-child(2) {
+        z-index: 9;
+        transform: scale(0);
+        opacity: 0;
+      }
+      &[data-state=photo-2] {
+        div:nth-child(1) {
+          z-index: 9;
+          transform: scale(0);
+          opacity: 0;
+        }
+        div:nth-child(2) {
+          z-index: 10;
+          transform: scale(1);
+          transition-delay: 0.55s;
+          opacity: 1;
+        }
       }
 
     }
+
 
   }
 }
