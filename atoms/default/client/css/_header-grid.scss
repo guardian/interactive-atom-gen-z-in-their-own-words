@@ -183,7 +183,6 @@
         position: absolute;
         top: 0;
         left: 0;
-        box-shadow: 0 0 10px rgba(0,0,0,0.15);
 
         img {
           display: block;
@@ -197,6 +196,7 @@
 
 
       div:nth-child(1) {
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
         transition: all 0.35s cubic-bezier(.5,0,.25,1.25);
         z-index: 10;
         transform: scale(1) rotate(0deg);
@@ -204,6 +204,7 @@
         opacity: 1;
       }
       div:nth-child(2) {
+        box-shadow: 0 0 10px rgba(0,0,0,0);
         transition: all 0.25s ease-in;
         z-index: 9;
         transform: scale(0) rotate(3deg);
@@ -211,12 +212,14 @@
       }
       &[data-state=photo-2] {
         div:nth-child(1) {
+          box-shadow: 0 0 10px rgba(0,0,0,0);
           transition: all 0.25s ease-in;
           z-index: 9;
           transform: scale(0) rotate(3deg);
           opacity: 0;
         }
         div:nth-child(2) {
+          box-shadow: 0 0 10px rgba(0,0,0,0.15);
           transition: all 0.35s cubic-bezier(.5,0,.25,1.25);
           z-index: 10;
           transform: scale(1) rotate(0deg);

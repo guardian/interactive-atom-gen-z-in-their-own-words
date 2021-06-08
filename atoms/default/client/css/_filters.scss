@@ -91,18 +91,34 @@
       }
     }
     &__label {
-      margin-bottom: 8px;
-      @include mq(desktop) {
-        padding: 4px 20px 4px 0;
-        width: 140px;
+      margin: 8px 0;
+      .inner {
+        cursor: pointer;
+        display: inline-flex;
+        padding: 0 5px 2px;
+        border-radius: 3px;
+        background-color: #eaeaea;
+        border-color: #eaeaea;
+        @include mq(tablet) {
+          border-radius: 4px;
+          padding: 3px 7px;
+        }
+
+        [data-topic='all'] & {
+          background-color: #ffe500;
+          border-color: #ffe500;
+        }
+      }
+    @include mq(desktop) {
+        margin: 0 8px 0 0;
+        width: 145px;
         text-align: right;
-        margin-bottom: 0;
       }
       @include mq(leftCol) {
-        width: 220px;
+        width: 325px;
       }
       @include mq(wide) {
-        width: 300px;
+        width: 405px;
       }
     }
     &__options {
@@ -117,8 +133,10 @@
         display: flex;
         padding: 0 5px 2px;
         margin: 0 8px 8px 0;
+        border-radius: 3px;
         transition: all 0.5s ease-out;
         @include mq(tablet) {
+          border-radius: 4px;
           padding: 3px 7px;
           white-space: nowrap;
         }
@@ -129,10 +147,10 @@
         background-color: #eaeaea;
         border-color: #eaeaea;
 
-        [data-topic='all'] & {
-          background-color: #ffe500;
-          border-color: #ffe500;
-        }
+        // [data-topic='all'] & {
+        //   background-color: #ffe500;
+        //   border-color: #ffe500;
+        // }
 
         [data-topic='psychological'] &[data-toggles='psychological'],
         [data-topic='education'] &[data-toggles='education'],
