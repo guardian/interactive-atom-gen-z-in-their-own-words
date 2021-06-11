@@ -12,10 +12,13 @@ animatableAll.forEach((el, i) => {
   switchMode(el);
   setTimeout(() => {
     switchMode(el);
-    setInterval(() => {
-      switchMode(el);
-    }, interval);
   }, delay);
+
+  setInterval(() => {
+    setTimeout(() => {
+      switchMode(el);
+    }, delay);
+  }, interval);
 
 });
 
